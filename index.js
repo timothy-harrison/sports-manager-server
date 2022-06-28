@@ -18,6 +18,12 @@ app.get("/get-team/:teamname", (req, res) => {
 	res.send(myPlayers);
 });
 
+app.get("/trade/:tradeData", (req, res) => {
+	const data = JSON.parse(req.params.tradeData);
+	console.log(data);
+	res.send(JSON.stringify(data, null, 2));
+});
+
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });
