@@ -7,6 +7,7 @@ const cors = require("cors");
 app.use(cors());
 
 app.get("/get-team/:teamname", (req, res) => {
+	console.log("Returning the team: ", req.params.teamname);
 	const data = fs.readFileSync("playerlist.json", { encoding: "utf-8" });
 	const players = JSON.parse(data);
 	let myPlayers = [];
